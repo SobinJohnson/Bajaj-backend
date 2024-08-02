@@ -11,6 +11,7 @@ const corsOptions = {
   allowedHeaders: ['Content-Type']
 };
 
+app.use(cors(corsOptions));
 app.post('/bfhl', (req, res) => {
   const { data } = req.body;
   if (!Array.isArray(data)) {
