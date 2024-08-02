@@ -5,7 +5,11 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
-app.use(cors());
+const corsOptions = {
+  origin: 'https://bajaj-frontend.onrender.com',
+  methods: ['GET', 'POST'],
+  allowedHeaders: ['Content-Type']
+};
 
 app.post('/bfhl', (req, res) => {
   const { data } = req.body;
